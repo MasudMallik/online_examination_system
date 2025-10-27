@@ -11,5 +11,5 @@ template=Jinja2Templates(directory="templates")
 def login(request:Request):
     return template.TemplateResponse("login.html",{"request":request})
 @app.post("/")
-def get_data(request:Request,email:str=Form(...),password:str=Form(...)):
+def get_data(request:Request,email:str=Form(...,description="abc@gmail.com"),password:str=Form(...)):
     print(email,password)
